@@ -1,21 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
-import Card from './components/Card/Card';
+import Deck from './components/Deck/Deck';
 
 function App() {
-  let card = {
-    colour: "red",
-    number: "3"
-  };
+  const cards = [{
+    number: 3,
+    colour: "blue"
+  },{
+      number: 13,
+      colour: "green"
+    },{
+      number: 2,
+      colour: "red"
+    },{
+      number: 7,
+      colour: "yellow"
+    },{
+      special: "aussetzen"
+    }];
 
   return (
     <div className="App">
-        <div style={{width: "20%"}}>
-          <Card colour="red" number="3" />
-        </div>
-        <div style={{width: "20%"}}>
-          <Card special="aussetzen" />
-        </div>
+      <Deck cards={cards} />
     </div>
   );
 }

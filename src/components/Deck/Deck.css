@@ -1,0 +1,8 @@
+.Deck {
+    display: flex;
+    width: 100%;
+}
+
+.Deck .Card {
+    flex-basis: 100%;
+}
