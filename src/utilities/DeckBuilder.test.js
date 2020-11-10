@@ -1,4 +1,3 @@
-import { render } from '@testing-library/react';
 import DeckBuilder from './DeckBuilder';
 
 test('can build a full deck', () => {
