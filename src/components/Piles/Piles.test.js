@@ -8,3 +8,10 @@ test('can display two piles', () => {
     const piles = el.getAllByTestId("pile");
     expect(piles.length).toBe(2);
 });
+
+test('can display piles based on game state', () => {
+    const gameState = Deal(Shuffle(Build(DeckDefinition)));
+    const el = render(<Piles {...gameState} />);
+    const drawPile = el.getAllByTestId("pile")[0];
+    expect(drawPile).toHaveTextContent(gameState.draw[0].number || gameState.draw[0].special);
+});

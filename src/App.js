@@ -13,7 +13,7 @@ function App() {
   const myHand = gameState.hands[0];
   return (
     <div className="App">
-      <Piles />
+      <Piles {...gameState}/>
       <Hand cards={myHand} />
     </div>
   );
