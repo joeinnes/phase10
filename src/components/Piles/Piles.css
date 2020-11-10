@@ -1,0 +1,13 @@
+.Piles {
+    display: flex;
+    margin: auto;
+    width: 30%;
+}
+
+.Piles .Draw-Pile {
+    flex: 1 0 calc(50% - 20px);
+}
+
+.Piles .Discard-Pile {
+    flex: 1 0 calc(50% - 20px);
+}
