@@ -1,5 +1,5 @@
 import DeckDefinition from '../settings/deck-definition.json';
-import { Build, Shuffle } from './DeckUtilities';
+import { Build, Deal, Shuffle } from './DeckUtilities';
 
 test('can build a full deck', () => {
     const deckDefinition = {
@@ -43,4 +43,16 @@ test('can build a full deck', () => {
     const deck = Build(DeckDefinition);
     Shuffle(deck);
     expect(deck[0].special).not.toBe({ "special": "aussetzen"})
+  });
+
+  test('can deal a deck', () => {
+      const deck = Build(DeckDefinition);
+      const players = Math.ceil(Math.random() * 8);
+      Shuffle(deck);
+      const { hands, discard, draw } = Deal(deck, players);
+      expect(hands.length).toEqual(players);
+      expect(hands.length+discard.length+draw.length).toEqual(deck.length)
+      for (let hand in hands) {
+          expect(hand.length).toEqual(10);
+      }
   });
