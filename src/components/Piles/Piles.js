@@ -2,8 +2,6 @@ import Card from '../Card/Card';
 import './Piles.css';
 
 export default function Piles({draw, discard}) {
-    console.log(draw);
-    console.log(discard);
     let nextDrawCard = draw ? draw[0] : null;
     let lastDiscardCard = discard ? discard[0] : null;
     return (

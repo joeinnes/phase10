@@ -24,3 +24,10 @@ test('has a colour', () => {
     expect(element).toHaveClass(chosenSpecial);
     expect(element).toHaveTextContent(chosenSpecial);
   });
+
+  test('shows face down cards', () => {
+    const el = render(<Card />);
+    const element = el.getByTestId("card");
+    expect(element).toHaveClass('Face-Down');
+    expect(element).toHaveTextContent('Phase 10');
+  })
