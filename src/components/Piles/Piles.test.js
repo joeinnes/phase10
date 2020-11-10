@@ -11,7 +11,10 @@ test('can display two piles', () => {
 
 test('can display piles based on game state', () => {
     const gameState = Deal(Shuffle(Build(DeckDefinition)));
+    gameState.discard.push(gameState.draw.shift());
     const el = render(<Piles {...gameState} />);
     const drawPile = el.getAllByTestId("pile")[0];
-    expect(drawPile).toHaveTextContent(gameState.draw[0].number || gameState.draw[0].special);
+    const discardPile = el.getAllByTestId("pile")[1];
+    expect(drawPile).toHaveTextContent("Phase 10");
+    expect(discardPile).toHaveTextContent(gameState.discard[0].number || gameState.discard[0].special)
 });

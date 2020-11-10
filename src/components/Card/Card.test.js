@@ -26,7 +26,7 @@ test('has a colour', () => {
   });
 
   test('shows face down cards', () => {
-    const el = render(<Card />);
+    const el = render(<Card faceDown={true} />);
     const element = el.getByTestId("card");
     expect(element).toHaveClass('Face-Down');
     expect(element).toHaveTextContent('Phase 10');

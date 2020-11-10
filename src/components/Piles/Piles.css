@@ -6,8 +6,10 @@
 
 .Piles .Draw-Pile {
     flex: 1 0 calc(50% - 20px);
+    cursor: pointer;
 }
 
 .Piles .Discard-Pile {
     flex: 1 0 calc(50% - 20px);
+    cursor: pointer;
 }
