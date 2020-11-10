@@ -75,16 +75,16 @@
     background: linear-gradient(135deg, #ffff00 0%, #ffff00 33%, rgba(255,255,255,1) 33%, rgba(255,255,255,1) 66%, #ffff00 66%, #ffff00 100%);
 }
 
-.Card.aussetzen {
+.Card.aussetzen, .Card.joker {
     background: #ffffff;
     background: linear-gradient(135deg, #000000 0%, #000000 33%, rgba(255,255,255,1) 33%, rgba(255,255,255,1) 66%, #000000 66%, #000000 100%);
 }
 
-.Card.aussetzen .Centre {
+.Card.aussetzen .Centre, .Card.joker .Centre {
     text-transform: uppercase;
 }
 
-.Card.aussetzen  .Centre .Text-Span {
+.Card.aussetzen .Centre .Text-Span, .Card.joker .Centre .Text-Span {
     background-color: #ffffff;
     text-shadow: 2px 2px #ff0000;
 }

@@ -1,3 +1,5 @@
+import random from 'random';
+
 export function Build(deckDefinition) {
     let deck = [];
     deckDefinition.specials.forEach(special => {
@@ -22,7 +24,7 @@ export function Build(deckDefinition) {
 
 export function Shuffle(deck) {
     return deck.sort(() => {
-        return Math.random() > 0.5
+        return random.int(0,2) - 1;
     })
 }
 

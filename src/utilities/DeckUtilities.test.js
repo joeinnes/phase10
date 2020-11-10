@@ -41,8 +41,17 @@ test('can build a full deck', () => {
 
   test('can shuffle a deck', () => {
     const deck = Build(DeckDefinition);
-    Shuffle(deck);
-    expect(deck[0].special).not.toBe({ "special": "aussetzen"})
+    let shuffled = false;
+    for (var i = 0; i < 20; i++) {
+        Shuffle(deck);
+        const card1 = deck[0];
+        Shuffle(deck);
+        const card2 = deck[0];
+        if (card1.number !== card2.number || card1.colour !== card2.colour || card1.special !== card2.special) {
+            shuffled = true
+        }
+    }
+    expect(shuffled).toBe(true);
   });
 
   test('can deal a deck', () => {

@@ -1,8 +1,9 @@
 .Hand {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
 }
 
 .Hand .Card {
-    flex-basis: 100%;
+    flex: 1 0 calc(20% - 20px);
 }

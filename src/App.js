@@ -1,32 +1,26 @@
 import './App.css';
+import WebFont from 'webfontloader';
 import Hand from './components/Hand/Hand';
-import { Build, Shuffle } from './utilities/DeckUtilities'
-import DeckDefinition from './settings/deck-definition.json'
-
-console.log(Shuffle(Build(DeckDefinition)));
+import { Build, Deal, Shuffle } from './utilities/DeckUtilities';
+import DeckDefinition from './settings/deck-definition.json';
+import {useState} from 'react';
 
 function App() {
-  const cards = [{
-    number: 3,
-    colour: "blue"
-  },{
-      number: 13,
-      colour: "green"
-    },{
-      number: 2,
-      colour: "red"
-    },{
-      number: 7,
-      colour: "yellow"
-    },{
-      special: "aussetzen"
-    }];
-
+  const deck = Shuffle(Build(DeckDefinition));
+  const playerCount = 1;
+  const [ gameState, setGameState ] = useState(Deal(deck, playerCount));
+  const myHand = gameState.hands[0];
   return (
     <div className="App">
-      <Hand cards={cards} />
+      <Hand cards={myHand} />
     </div>
   );
 }
+  WebFont.load({
+    google: {
+      families: ['Hammersmith One']
+    },
+    active: () => window.dispatchEvent(new Event('resize'))
+  });
 
 export default App;
