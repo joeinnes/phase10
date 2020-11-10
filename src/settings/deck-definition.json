@@ -2,7 +2,10 @@
     "specials": [
         { 
             "name": "aussetzen", 
-            "quantity": 5
+            "quantity": 4
+        }, {
+            "name": "joker",
+            "quantity": 8
         }
     ],
     "basics": {
@@ -24,9 +27,8 @@
             "9",
             "10",
             "11",
-            "12",
-            "13"
+            "12"
         ],
-        "quantity": 5
+        "quantity": 2
     }
 }

@@ -1,4 +1,5 @@
-import DeckBuilder from './DeckBuilder';
+import DeckDefinition from '../settings/deck-definition.json';
+import { Build, Shuffle } from './DeckUtilities';
 
 test('can build a full deck', () => {
     const deckDefinition = {
@@ -33,7 +34,13 @@ test('can build a full deck', () => {
             "quantity": 5
         }
     };
-    const deck = DeckBuilder(deckDefinition);
+    const deck = Build(deckDefinition);
 
     expect(deck.length).toEqual(265);
+  });
+
+  test('can shuffle a deck', () => {
+    const deck = Build(DeckDefinition);
+    Shuffle(deck);
+    expect(deck[0].special).not.toBe({ "special": "aussetzen"})
   });

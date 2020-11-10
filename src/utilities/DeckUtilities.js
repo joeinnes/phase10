@@ -1,4 +1,4 @@
-export default function DeckBuilder(deckDefinition) {
+export function Build(deckDefinition) {
     let deck = [];
     deckDefinition.specials.forEach(special => {
         for (let i = 0; i < special.quantity; i++) {
@@ -18,4 +18,10 @@ export default function DeckBuilder(deckDefinition) {
     });
 
     return deck;
+}
+
+export function Shuffle(deck) {
+    return deck.sort(() => {
+        return Math.random() > 0.5
+    })
 }
