@@ -1,5 +1,9 @@
 import './App.css';
 import Hand from './components/Hand/Hand';
+import DeckBuilder from './utilities/DeckBuilder';
+import DeckDefinition from './settings/deck-definition.json'
+
+console.log(DeckBuilder(DeckDefinition));
 
 function App() {
   const cards = [{
