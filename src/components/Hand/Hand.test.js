@@ -1,5 +1,5 @@
 import { render, getAllByText, getByTestId } from '@testing-library/react';
-import Deck from './Deck';
+import Hand from './Hand';
 
 test('contains multiple cards', () => {
     const cards = [{
@@ -17,7 +17,7 @@ test('contains multiple cards', () => {
       },{
         special: "aussetzen"
       }];
-    const el = render(<Deck cards={cards} />);
+    const el = render(<Hand cards={cards} />);
     const numberElements = el.getAllByTestId('card');
     expect(numberElements.length).toEqual(cards.length);
   });

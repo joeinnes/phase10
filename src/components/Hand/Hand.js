@@ -1,10 +1,10 @@
-import './Deck.css';
+import './Hand.css';
 import Card from '../Card/Card';
 
-export default function Deck ({cards}) {
+export default function Hand ({cards}) {
     const cardsToRender = cards.map((card, index) => <Card {...card} key={index} />);
     return (
-        <div className="Deck">
+        <div className="Hand">
             {cardsToRender}
         </div>
     )

@@ -1,5 +1,5 @@
 import './App.css';
-import Deck from './components/Deck/Deck';
+import Hand from './components/Hand/Hand';
 
 function App() {
   const cards = [{
@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div className="App">
-      <Deck cards={cards} />
+      <Hand cards={cards} />
     </div>
   );
 }

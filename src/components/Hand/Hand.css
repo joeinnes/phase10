@@ -1,8 +1,8 @@
-.Deck {
+.Hand {
     display: flex;
     width: 100%;
 }
 
-.Deck .Card {
+.Hand .Card {
     flex-basis: 100%;
 }
