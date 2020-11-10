@@ -47,12 +47,13 @@ test('can build a full deck', () => {
 
   test('can deal a deck', () => {
       const deck = Build(DeckDefinition);
+      const deckLength = deck.length;
       const players = Math.ceil(Math.random() * 8);
       Shuffle(deck);
       const { hands, discard, draw } = Deal(deck, players);
       expect(hands.length).toEqual(players);
-      expect(hands.length+discard.length+draw.length).toEqual(deck.length)
-      for (let hand in hands) {
-          expect(hand.length).toEqual(10);
+      for (let hand of hands) {
+        expect(hand.length).toEqual(10);
       }
+      expect((10*hands.length) + discard.length + draw.length).toEqual(deckLength)
   });

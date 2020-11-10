@@ -25,3 +25,17 @@ export function Shuffle(deck) {
         return Math.random() > 0.5
     })
 }
+
+export function Deal(deck, players) {
+    let hands = [];
+    for (let i = 0; i < players; i++) {
+      hands[i] = deck.splice(0, 10);
+    }
+    const draw = deck;
+    const discard = [];
+    return {
+        hands,
+        draw,
+        discard
+    }
+}
