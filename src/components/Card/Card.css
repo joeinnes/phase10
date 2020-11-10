@@ -2,7 +2,8 @@
     color: black;
     border-radius: 5px;
     box-shadow: 5px 5px 5px #000000;
-    position: relative
+    position: relative;
+    margin: 10px;
 }
 
 .Card:before {
@@ -25,8 +26,8 @@
 
 .Card .Top-Left {
     align-self: flex-start;
-    margin-top: 10px;
     margin-left: 10px;
+    margin-top: 10px;
     flex: 0 1 30%;
     width: 50%;
     text-align: left;
@@ -46,6 +47,9 @@
 }
 
 .Card .Centre {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
     line-height: 1em;
     flex: 1 1 100%;
@@ -69,4 +73,18 @@
 .Card.yellow {
     background: #ffff00;
     background: linear-gradient(135deg, #ffff00 0%, #ffff00 33%, rgba(255,255,255,1) 33%, rgba(255,255,255,1) 66%, #ffff00 66%, #ffff00 100%);
+}
+
+.Card.aussetzen {
+    background: #ffffff;
+    background: linear-gradient(135deg, #000000 0%, #000000 33%, rgba(255,255,255,1) 33%, rgba(255,255,255,1) 66%, #000000 66%, #000000 100%);
+}
+
+.Card.aussetzen .Centre {
+    text-transform: uppercase;
+}
+
+.Card.aussetzen  .Centre .Text-Span {
+    background-color: #ffffff;
+    text-shadow: 2px 2px #ff0000;
 }
