@@ -1,0 +1,72 @@
+.Card {
+    color: black;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #000000;
+    position: relative
+}
+
+.Card:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: calc((3 / 2) * 100%);
+  }
+
+.Card .Content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Card .Top-Left {
+    align-self: flex-start;
+    margin-top: 10px;
+    margin-left: 10px;
+    flex: 0 1 30%;
+    width: 50%;
+    text-align: left;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px #000000;
+}
+
+.Card .Bottom-Right {
+    align-self: flex-end;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    flex: 0 1 30%;
+    width: 50%;
+    text-align: right;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px #000000;
+}
+
+.Card .Centre {
+    width: 100%;
+    line-height: 1em;
+    flex: 1 1 100%;
+}
+
+.Card.red {
+    background: #ff0000;
+    background: linear-gradient(135deg, #ff0000 0%, #ff0000 25%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 75%, #ff0000 75%, #ff0000 100%);
+}
+
+.Card.green {
+    background: #00ff00;
+    background: linear-gradient(135deg, #00ff00 0%, #00ff00 33%, rgba(255,255,255,1) 33%, rgba(255,255,255,1) 66%, #00ff00 66%, #00ff00 100%);
+}
+
+.Card.blue {
+    background: #0000ff;
+    background: linear-gradient(135deg, #0000ff 0%, #0000ff 33%, rgba(255,255,255,1) 33%, rgba(255,255,255,1) 66%, #0000ff 66%, #0000ff 100%);
+}
+
+.Card.yellow {
+    background: #ffff00;
+    background: linear-gradient(135deg, #ffff00 0%, #ffff00 33%, rgba(255,255,255,1) 33%, rgba(255,255,255,1) 66%, #ffff00 66%, #ffff00 100%);
+}

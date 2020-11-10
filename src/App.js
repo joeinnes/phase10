@@ -1,7 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import Card from './components/Card/Card';
 
 function App() {
+  let card = {
+    colour: "red",
+    number: "3"
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +23,9 @@ function App() {
         >
           Learn React
         </a>
+        <div style={{width: "20%"}}>
+          <Card colour="red" number="3" />
+        </div>
       </header>
     </div>
   );
