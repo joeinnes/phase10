@@ -2,8 +2,9 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    max-height: 30vh;
 }
 
 .Hand .Card {
-    flex: 1 0 calc(20% - 20px);
+    flex: 1 0 7%;
 }

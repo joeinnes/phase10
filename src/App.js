@@ -9,20 +9,38 @@ import {useState, useCallback } from 'react';
 function App() {
   const deck = Shuffle(Build(DeckDefinition));
   const playerCount = 1;
+  const playerNumber = 0;
   const [ gameState, setGameState ] = useState(Deal(deck, playerCount));
-  const flipCard = useCallback(() => {
-    console.log('Flipping card')
+
+  const addToHand = useCallback((pile) => {
+    if (gameState.hands[playerNumber].length >= 11) {
+      alert(`You can't pick up again. Choose a card to throw away.`);
+      return;
+    }
     let newGameState = { ...gameState };
-    newGameState.discard.unshift(newGameState.draw.shift());
+    newGameState.hands[playerNumber].unshift(newGameState[pile].shift());
     setGameState(newGameState);
-    console.log(gameState.discard)
     window.dispatchEvent(new Event('resize'));
   }, [gameState]);
+
+  const discardFn = useCallback((cardIndex) => {
+    if (gameState.hands[playerNumber].length <= 10) {
+      alert(`You can't throw away any more.`);
+      return;
+    }
+    let newGameState = { ...gameState };
+    newGameState.discard = [...newGameState.hands[playerNumber].splice(cardIndex, 1), ...newGameState.discard];
+    console.log(newGameState.discard)
+    setGameState(newGameState);
+    window.dispatchEvent(new Event('resize'));
+  }, [gameState]);
+
   const myHand = gameState.hands[0];
+
   return (
     <div className="App">
-      <Piles {...gameState} flipCard={flipCard}/>
-      <Hand cards={myHand} />
+      <Piles {...gameState} addToHand={addToHand}/>
+      <Hand cards={myHand} discardFn={discardFn} />
     </div>
   );
 }
